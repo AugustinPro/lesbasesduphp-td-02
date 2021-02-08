@@ -1,31 +1,53 @@
 <?php
 // 1. chaine guillemets simples (stringSingleQuotes)
+$string1 = '« Bonjour, je m\'appelle françois dupont, j\'ai 35 ans et j\'habite paris. »';
 
 // 2.  chaine guillemets doubles (stringDoubleQuotes)
 
+$string2 = "« je suis une \"chaîne de caractères\". »";
 
 // 3. chaine longue, écriture HereDoc (longString)
 
+$string3 = <<<EOD
+«Croisant les bras, et tous s'assirent autour du foyer, rougie, rendait violâtre. Avoue que je suis simplement ici pour tenir compagnie au tien et pour t'imaginer que tu souffres par ta faute. Élevez un étendard sur une montagne, et je serais dans un extrême embarras. Voir, si touchés que je fusse un grand misérable! Facile, il devait trouver le cardinal seul, sans interlocuteur, un drame invisible et inconnu aux autres spectateurs que nous jouions, du pauvre pygmée qui s'en allait.»
+EOD;
 
 // 4. nouvelle chaine guillemets simple corrigée (firstname, lastname, age, city)
+$lastname = 'dupont';
+$name = 'françois';
+$city = 'paris';
+$string4 = '« Bonjour, je m\'appelle ' .$name. ' ' .$lastname. ', j\'ai 35 ans et j\'habite ' .$city. ' »';
 
 // 5. Nouvelle chaîne formée avec des variables (newStringSingleQuotes)
 
+$lastname = strtoupper($lastname);
+$name = ucwords($name);
+$city = ucwords($city);
+
+$string5 = '« Bonjour, je m\'appelle ' .$name. ' ' .$lastname. ', j\'ai 35 ans et j\'habite ' .$city. ' »';
+
 // 6. Nouvelle chaine modifiée (revisedNewStringSimpleQuotes)
 
+$string6 = ucwords($string1);
 
 // Tableaux
 
 // 8. Notes (grades)
 
+$notes = [15, 13, 8, 10, 17];
+
 // 9. Matières (courses)
 
+$matieres = ['html/css', 'algorithmique', 'anglais', 'marketing', 'ui/ux'];
 
 // 11. fusion de deux tableaux (coursesGrades)
 
+$string7 = array_combine($matieres, $notes);
 
 // copie du tableau pour ne écraser l'original (revisedCoursesGrades)
- 
+
+$replace = ['algorithmique' => 10, 'marketing' => 13];
+$string8 = array_replace($string7, $replace);
 
 // 12. Inversion des notes d'algorithmique et de marketing
 
@@ -59,6 +81,7 @@
                         <h2 class="card-title">Présentation 1</h2>
                         <p class="card-text">
                             <!-- afficher votre réponse ici -->
+                            <?= $string1 ?>
                         </p>
                     </div>
                 </div>
@@ -67,6 +90,7 @@
                     <h2 class="card-title">Chaine guillemets doubles</h2>
                     <p>
                          <!-- afficher votre réponse ici -->
+                         <?= $string2 ?>
                     </p>
                 </div>
                 <!-- Question 3 -->
@@ -76,6 +100,7 @@
                         <blockquote class="blockquote mb-0">
                             <p class="card-text">
                                  <!-- afficher votre réponse ici -->
+                                 <?= $string3 ?>
                             </p>
                         </blockquote>
                     </div>
@@ -86,6 +111,7 @@
                         <h2 class="card-title">Présentation 2</h2>
                         <p class="card-text">
                             <!-- afficher votre réponse ici -->
+                            <?= $string4 ?>
                         </p>
                     </div>
                 </div>
@@ -95,6 +121,7 @@
                         <h2 class="card-title">Présentation 3</h2>
                         <p class="card-text">
                              <!-- afficher votre réponse ici -->
+                             <?= $string5 ?>
                         </p>
                     </div>
                 </div>
@@ -102,7 +129,7 @@
                <!-- Question 6 -->
                 <div class="card bg-primary text-white text-center p-3">
                     <h2 class="card-title">Longueur d'une chaine</h2>
-                    <p>Le prénom contient <?php // votre réponse ici ?> caractères.</p>
+                    <p>Le prénom contient <?php echo strlen($name); ?> caractères.</p>
                 </div>
 
                  <!-- Question 7 -->
@@ -111,6 +138,7 @@
                         <h2 class="card-title">Présentation 4</h2>
                         <p class="card-text">
                             <!-- afficher votre réponse ici -->
+                            <?= $string6 ?>
                         </p>
                     </div>
                 </div>
@@ -120,7 +148,8 @@
                     <div class="card-body">
                         <h2 class="card-title">Tableau - Notes / Matières</h2>
                         <p class="card-text">
-                             <!-- afficher votre réponse ici -->
+                            <!-- afficher votre réponse ici -->
+                            Matière : <?= $matieres[4] ?> | Note : <?= $notes[4] ?>
                         </p>
                     </div>
                 </div>
@@ -131,6 +160,7 @@
                         <p class="card-text">
                             <pre>
                                 <!-- afficher votre réponse ici -->
+                                <?php print_r($string8); ?>
                             </pre>
                         </p>
                     </div>
@@ -144,6 +174,7 @@
                             <!-- question 11 -->
                             <pre>
                                  <!-- afficher votre réponse ici -->
+                                 <?php print_r($string7) ?>
                             </pre>
                         </p>
                     </div>
