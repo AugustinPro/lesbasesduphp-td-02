@@ -16,13 +16,16 @@ EOD;
 $lastname = 'dupont';
 $name = 'françois';
 $city = 'paris';
-$string4 = '« Bonjour, je m\'appelle ' .$name. ' ' .$lastname. ', j\'ai 35 ans et j\'habite ' .$city. ' »';
+$string4 = '« Bonjour, je m\'appelle ' .$name. '&nbsp;' .$lastname. ', j\'ai 35 ans et j\'habite ' .$city. ' »';
+
+// with double quotes : 
+$string4 = "« Bonjour, je m'appelle $name $lastname, j'ai 35 ans et j'habite $city »";
 
 // 5. Nouvelle chaîne formée avec des variables (newStringSingleQuotes)
 
-$lastname = strtoupper($lastname);
-$name = ucwords($name);
-$city = ucwords($city);
+$lastname = strtoupper($lastname);      //string to upper (makes whole string caps)
+$name = ucfirst($name);                 //first letter of string uppercase
+$city = ucwords($city);                 //first letter of each word in string uppercase
 
 $string5 = '« Bonjour, je m\'appelle ' .$name. ' ' .$lastname. ', j\'ai 35 ans et j\'habite ' .$city. ' »';
 
@@ -46,6 +49,8 @@ $string7 = array_combine($matieres, $notes);
 
 // copie du tableau pour ne écraser l'original (revisedCoursesGrades)
 
+//$string7['algorithmique'] = 10;       //does the same thing but easier
+//$string7[3] = 13;                     //works too
 $replace = ['algorithmique' => 10, 'marketing' => 13];
 $string8 = array_replace($string7, $replace);
 
@@ -56,7 +61,7 @@ $string8 = array_replace($string7, $replace);
 // 13. Tableau de notes des étudiants (students)
 
 $string9 = [
-    'eleve1' => [
+    'eleve1' => [                   //sub array
         'html/css' => 12,
         'algorithmique' => 9,
         'anglais' => 18,
@@ -85,6 +90,9 @@ $string9 = [
         'ui/ux' => 18
     ],
 ];
+
+//to target eleve2 -> marketing : $string9['eleve2']['marketing'];
+//                                $string9[1][3];   works the same
 
 ?>
 <!DOCTYPE html>
@@ -207,7 +215,7 @@ $string9 = [
                             <!-- question 11 -->
                             <pre>
                                  <!-- afficher votre réponse ici -->
-                                 <?php print_r($string8) ?>
+                                 <?php var_dump($string8) ?>
                             </pre>
                         </p>
                     </div>
