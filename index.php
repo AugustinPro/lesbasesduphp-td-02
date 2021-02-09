@@ -53,6 +53,37 @@ $string8 = array_replace($string7, $replace);
 
 // 13. Tableau de notes des étudiants (students)
 
+$string9 = [
+    'eleve1' => [
+        'html/css' => 12,
+        'algorithmique' => 9,
+        'anglais' => 18,
+        'marketing' => 15,
+        'ui/ux' => 13
+    ],
+    'eleve2' => [
+        'html/css' => 16,
+        'algorithmique' => 7,
+        'anglais' => 13,
+        'marketing' => 14,
+        'ui/ux' => 14
+    ],
+    'eleve3' => [
+        'html/css' => 12,
+        'algorithmique' => 16,
+        'anglais' => 15,
+        'marketing' => 12,
+        'ui/ux' => 18
+    ],
+    'eleve4' => [
+        'html/css' => 19,
+        'algorithmique' => 17,
+        'anglais' => 12,
+        'marketing' => 11,
+        'ui/ux' => 18
+    ],
+];
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -160,7 +191,7 @@ $string8 = array_replace($string7, $replace);
                         <p class="card-text">
                             <pre>
                                 <!-- afficher votre réponse ici -->
-                                <?php print_r($string8); ?>
+                                <?php print_r($string7); ?>
                             </pre>
                         </p>
                     </div>
@@ -174,7 +205,7 @@ $string8 = array_replace($string7, $replace);
                             <!-- question 11 -->
                             <pre>
                                  <!-- afficher votre réponse ici -->
-                                 <?php print_r($string7) ?>
+                                 <?php print_r($string8) ?>
                             </pre>
                         </p>
                     </div>
@@ -186,6 +217,7 @@ $string8 = array_replace($string7, $replace);
                         <p class="card-text">
                             <pre>
                                  <!-- afficher votre réponse ici -->
+                                 <?php print_r($string9) ?>
                             </pre>
                         </p>
                     </div>
