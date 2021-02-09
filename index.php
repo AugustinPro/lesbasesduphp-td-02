@@ -49,6 +49,8 @@ $string7 = array_combine($matieres, $notes);
 $replace = ['algorithmique' => 10, 'marketing' => 13];
 $string8 = array_replace($string7, $replace);
 
+//Look around https://www.php.net/manual/en/ref.array.php for a bunch of array functions built-in to php
+
 // 12. Inversion des notes d'algorithmique et de marketing
 
 // 13. Tableau de notes des étudiants (students)
